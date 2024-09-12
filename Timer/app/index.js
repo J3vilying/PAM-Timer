@@ -35,8 +35,12 @@ const Timer = () => {
       <View style ={styles.cronometro}>
         <Text style={styles.timerText}>{timeLeft} segundos</Text>
         <View style={styles.btn}>
-          <Button title={isRunning ? 'Pausar' : 'Iniciar'} onPress={handleStartPause} />
-          <Button title="Resetar" onPress={handleReset} />
+          <View style={styles.button}>
+            <Button title={isRunning ? 'Pausar' : 'Iniciar'} color="black" onPress={handleStartPause} />
+          </View>
+          <View style={styles.button}>
+            <Button title="Resetar" color="black" onPress={handleReset} />
+          </View>
         </View>
       </View>
     </View>
@@ -48,7 +52,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#111',
+    backgroundColor: '#101010',
   },
 
   timerText: {
@@ -61,16 +65,31 @@ cronometro: {
   display: 'flex',
   width: '60%',
   height: '50%',
-  backgroundColor: '#CCCCCC',
+  backgroundColor: '#cccccc',
   justifyContent: 'center',
   alignItems: 'center',
-  borderRadius: '12px', 
+  borderRadius: 20,
+  borderBlockColor: '#777777',
+  borderLeftColor: '#777777',
+  borderRightColor:'#777777',
+  borderWidth: 5
 },
 
 titulo: {
   fontSize: 40,
   marginBottom: 100,
-  color:'white'
+  color:'white',
+  borderBottomColor: 'white',
+  borderBottomWidth: 2
+},
+
+btn: {
+  alignItems: 'center',
+  justifyContent: 'center',
+},
+
+button: {
+  marginTop: 20,
 }
 
 });
